@@ -9,4 +9,12 @@ import { Component } from '@angular/core';
 // Compatível com ES6 (2015)
 export class AppComponent {
   title = 'Caelum Pic';
+
+  constructor() {
+    var i = 0;
+    setInterval(() => {
+      this.title = this.title + ' - ' + i;
+      i++;
+    }, 2000);
+  }
 }
