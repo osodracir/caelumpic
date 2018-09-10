@@ -6,6 +6,6 @@ import { FotoComponent } from './foto.component';
 
 @NgModule({
     declarations: [FotoComponent],
-    exports: [FotoComponent]
+    exports: [FotoComponent] // Pode ser utilizado por outros módulos.
 })
 export class FotoModule {}
