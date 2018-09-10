@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'Caelum Pic';
 
   constructor() {
-    var i = 0;
+    let i = 0; // ES6. Mais controlado do que o 'var'.
     setInterval(() => {
       this.title = this.title + ' - ' + i;
       i++;
