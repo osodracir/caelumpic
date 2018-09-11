@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 // Decorator ("anotação")
 @Component({
@@ -9,4 +10,6 @@ import { Component } from '@angular/core';
 // Compatível com ES6 (2015)
 export class AppComponent {
   title = 'Caelum Pic';
+
+  constructor(@Inject(HttpClient) http) {}
 }
