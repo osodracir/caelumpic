@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 // Compatível com ES6 (2015)
 export class AppComponent {
-  title = 'Caelum Pic';
+  title :string = 'Caelum Pic';
 
-  constructor(@Inject(HttpClient) http) {}
+  constructor(http :HttpClient) {}
 }
