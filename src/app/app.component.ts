@@ -14,13 +14,8 @@ export class AppComponent {
 
   constructor(http :HttpClient) {
     const URL = 'http://localhost:3000/v1/fotos';
-    const that = this;
 
     const stream = http.get(URL);
-    stream.subscribe(function(dados) {
-      that.listaFotos = dados;
-    }, function(erro) {
-      console.log('Erro! ', erro)
-    });
+    stream.subscribe(dados => this.listaFotos = dados, erro => console.log('Erro! ', erro));
   }
 }
