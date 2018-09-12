@@ -1,4 +1,5 @@
 interface Foto {
     url: string,
-    titulo: string
+    titulo: string,
+    descricao: string
 }
