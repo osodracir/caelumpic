@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 // Decorator ("anotação")
 @Component({
@@ -10,12 +11,13 @@ import { HttpClient } from '@angular/common/http';
 // Compatível com ES6 (2015)
 export class AppComponent {
   title :string = 'Caelum Pic';
-  listaFotos;
+  listaFotos :Foto[];
 
   constructor(http :HttpClient) {
     const URL = 'http://localhost:3000/v1/fotos';
 
-    const stream = http.get(URL);
+    // Type casting em Angular?!
+    const stream = http.get(URL) as Observable<Foto[]>;
     stream.subscribe(dados => this.listaFotos = dados, erro => console.log('Erro! ', erro));
   }
 }
