@@ -4,6 +4,13 @@
     <h1 class="text-center">{{ title }}</h1>
   </header>
   <main class="container"> <!-- HTML5 -->
+    <div>
+        <form class="input-group">
+            <span class="input-group-prepend">
+                <a routerLink="/cadastro" class="btn btn-primary">Nova Foto</a>
+            </span>
+        </form>
+    </div>
     <div class="row">
       <painel *ngFor="let foto of listaFotos" titulo="{{foto.titulo}}" class="col-md-2">
         <foto url="{{foto.url}}" titulo="{{foto.titulo}}"></foto>
