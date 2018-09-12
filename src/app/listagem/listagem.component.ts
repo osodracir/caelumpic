@@ -15,8 +15,7 @@ export class ListagemComponent {
   constructor(http :HttpClient) {
     const URL = 'http://localhost:3000/v1/fotos';
 
-    // Type casting em Angular?!
-    const stream = http.get(URL) as Observable<Foto[]>;
+    const stream = http.get<Foto[]>(URL);
     stream.subscribe(
         fotosApi => this.listaFotos = fotosApi,
         erro => console.log('Erro! ', erro)

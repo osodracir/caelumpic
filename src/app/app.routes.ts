@@ -4,7 +4,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 
 /* Mapeamentos entre as URLs e os componentes. */
 const ROTAS_APP: Routes = [
-    { path: '', component: ListagemComponent},
+    { path: '', component: ListagemComponent },
     { path: 'cadastro', component: CadastroComponent }
 ];
 
