@@ -5,7 +5,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 /* Mapeamentos entre as URLs e os componentes. */
 const ROTAS_APP: Routes = [
     { path: '', component: ListagemComponent },
-    { path: 'cadastro', component: CadastroComponent }
+    { path: 'cadastro', component: CadastroComponent },
+    { path: '**', redirectTo: '' } // URL desconhecida.
 ];
 
 export const ROTEAMENTO = RouterModule.forRoot(ROTAS_APP);
