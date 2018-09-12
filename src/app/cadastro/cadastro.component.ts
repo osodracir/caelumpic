@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { FotoComponent } from '../foto/foto.component';
+import { Foto } from '../foto/foto';
 
 @Component({
     selector: 'cadastro',
     templateUrl: './cadastro.component.html'
 })
 export class CadastroComponent {
-    foto = new FotoComponent();
+    foto: Foto = new Foto();
 
     salvar(evento: Event) {
         evento.preventDefault();

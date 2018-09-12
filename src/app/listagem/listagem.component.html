@@ -13,7 +13,7 @@
     </div>
     <div class="row">
       <painel *ngFor="let foto of listaFotos" titulo="{{foto.titulo}}" class="col-md-2">
-        <foto url="{{foto.url}}" titulo="{{foto.titulo}}"></foto>
+        <foto [foto]="foto"></foto>
       </painel>
     </div>
   </main>

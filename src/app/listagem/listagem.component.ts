@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Foto } from '../foto/foto';
 
 // Decorator ("anotação")
 @Component({
