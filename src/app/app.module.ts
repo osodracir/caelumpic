@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FotoModule } from './foto/foto.module';
-import { HttpClientModule } from '@angular/common/http';
+import { PainelModule } from './painel/painel.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule, // Coloca o módulo aqui para poder injetar.
-    FotoModule // Se não colocar aqui, NÃO VAI!
+    FotoModule, // Se não colocar aqui, NÃO VAI!
+    PainelModule
   ],
   providers: [],
   bootstrap: [AppComponent] // Este é o módulo raiz.
