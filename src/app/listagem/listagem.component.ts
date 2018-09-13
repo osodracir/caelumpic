@@ -12,8 +12,8 @@ export class ListagemComponent {
   title :string = 'Caelum Pic';
   listaFotos :Foto[];
 
-  constructor(private fotoService: FotoService) {
-    fotoService.listar().subscribe(
+  constructor(private servico: FotoService) {
+    servico.listar().subscribe(
       fotosApi => this.listaFotos = fotosApi,
       erro => console.log('Erro! ', erro)
     );
