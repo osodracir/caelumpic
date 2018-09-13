@@ -9,6 +9,7 @@ import { PainelModule } from './painel/painel.module';
 import { ListagemComponent } from './listagem/listagem.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ROTEAMENTO } from './app.routes';
+import { FotoService } from './servicos/foto.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,10 @@ import { ROTEAMENTO } from './app.routes';
     PainelModule,
     ROTEAMENTO  // Importando os mapeamentos entre URLs e Componentes.
   ],
-  providers: [],
+  // Aqui são colocados os serviços a serem injetados.
+  providers: [
+    FotoService
+  ],
   bootstrap: [AppComponent] // Este é o módulo raiz.
 })
 export class AppModule { }

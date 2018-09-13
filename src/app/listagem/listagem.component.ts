@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Foto } from '../foto/foto';
+import { FotoService } from '../servicos/foto.service';
 
 // Decorator ("anotação")
 @Component({
@@ -13,13 +12,10 @@ export class ListagemComponent {
   title :string = 'Caelum Pic';
   listaFotos :Foto[];
 
-  constructor(http :HttpClient) {
-    const URL = 'http://localhost:3000/v1/fotos';
-
-    const stream = http.get<Foto[]>(URL);
-    stream.subscribe(
-        fotosApi => this.listaFotos = fotosApi,
-        erro => console.log('Erro! ', erro)
+  constructor(private fotoService: FotoService) {
+    fotoService.listar().subscribe(
+      fotosApi => this.listaFotos = fotosApi,
+      erro => console.log('Erro! ', erro)
     );
   }
 }
