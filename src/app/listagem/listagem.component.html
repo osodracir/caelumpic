@@ -12,7 +12,7 @@
         </form>
     </div>
     <div class="row">
-      <painel *ngFor="let foto of listaFotos" titulo="{{foto.titulo}}" class="col-md-2">
+      <painel *ngFor="let foto of listaFotos" titulo="{{foto.titulo}}" class="col-md-3">
         <!-- Ao se passar um objeto como parâmetro, deve-se utilizar o Property
              Binding. Da outra forma, o objeto será transformado em uma String. -->
         <foto [foto]="foto"></foto>

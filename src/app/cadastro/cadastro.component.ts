@@ -8,13 +8,11 @@ import { Router } from '@angular/router';
     templateUrl: './cadastro.component.html'
 })
 export class CadastroComponent {
-    http: HttpClient;
-    roteador: Router;
     foto: Foto = new Foto();
 
-    constructor(http: HttpClient, roteador: Router) {
-        this.http = http;
-        this.roteador = roteador;
+    /* Declarando-se o parâmetro do construtor como 'private', gera um atributo
+       com o mesmo nome. */
+    constructor(private http: HttpClient, private roteador: Router) {
     }
 
     salvar() {
