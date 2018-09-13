@@ -8,8 +8,7 @@ import { Foto } from '../foto/foto';
 export class CadastroComponent {
     foto: Foto = new Foto();
 
-    salvar(evento: Event) {
-        evento.preventDefault();
+    salvar() {
         console.log(this.foto);
     }
 }
