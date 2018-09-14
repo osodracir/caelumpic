@@ -3,9 +3,16 @@
 import { NgModule } from '@angular/core';
 
 import { FotoComponent } from './foto.component';
+import { FiltroPorTitulo } from './foto.pipe';
 
 @NgModule({
-    declarations: [FotoComponent],
-    exports: [FotoComponent] // Pode ser utilizado por outros módulos.
+    declarations: [
+        FotoComponent,
+        FiltroPorTitulo
+    ],
+    exports: [ // Podem ser utilizados por outros módulos.
+        FotoComponent,
+        FiltroPorTitulo
+    ]
 })
 export class FotoModule {}

@@ -14,10 +14,11 @@
             <span class="input-group-prepend">
                 <a routerLink="/cadastro" class="btn btn-primary">Nova Foto</a>
             </span>
+            <input (keyup)="0" #busca type="search" class="form-control" placeholder="Filtrar as fotos" />
         </form>
     </div>
     <div class="row">
-      <painel *ngFor="let foto of listaFotos" titulo="{{foto.titulo}}" class="col-md-3">
+      <painel *ngFor="let foto of listaFotos | filtroPorTitulo:busca.value" titulo="{{foto.titulo}}" class="col-md-3">
         <!-- Ao se passar um objeto como parâmetro, deve-se utilizar o Property
              Binding. Da outra forma, o objeto será transformado em uma String. -->
         <a [routerLink]="['/cadastro', foto._id]">
