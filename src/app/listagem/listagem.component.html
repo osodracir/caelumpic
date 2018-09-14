@@ -20,7 +20,9 @@
       <painel *ngFor="let foto of listaFotos" titulo="{{foto.titulo}}" class="col-md-3">
         <!-- Ao se passar um objeto como parâmetro, deve-se utilizar o Property
              Binding. Da outra forma, o objeto será transformado em uma String. -->
-        <foto [foto]="foto"></foto>
+        <a [routerLink]="['/cadastro', foto._id]">
+          <foto [foto]="foto"></foto>
+        </a>
         <button (click)="remover(foto)" class="btn btn-danger btn-block">Remover</button>
       </painel>
     </div>

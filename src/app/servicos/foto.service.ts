@@ -21,6 +21,14 @@ export class FotoService {
         return this.http.get<Foto[]>(this.url);
     }
 
+    obter(id: string) : Observable<Foto> {
+        return this.http.get<Foto>(`${this.url}/${id}`);
+    }
+
+    alterar(foto: Foto) : Observable<Object> {
+        return this.http.put(`${this.url}/${foto._id}`, foto, this.cabecalhos);
+    }
+
     cadastrar(foto: Foto) : Observable<Object> {
         /* Se for só post(), não vai. */
         return this.http.post(this.url, foto, this.cabecalhos);

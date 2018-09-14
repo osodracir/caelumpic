@@ -6,6 +6,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 const ROTAS_APP: Routes = [
     { path: '', component: ListagemComponent },
     { path: 'cadastro', component: CadastroComponent },
+    { path: 'cadastro/:idFoto', component: CadastroComponent },
     { path: '**', redirectTo: '' } // URL desconhecida. Deverá ser o último registro no vetor.
 ];
 
