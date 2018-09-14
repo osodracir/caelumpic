@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { FotoService } from '../servicos/foto.service';
 import { Foto } from '../foto/foto';
 
@@ -8,12 +9,18 @@ import { Foto } from '../foto/foto';
     templateUrl: './cadastro.component.html'
 })
 export class CadastroComponent {
+    formCadastro: FormGroup;
     mensagem: string = '';
     foto: Foto = new Foto();
 
     /* Declarando-se o parâmetro do construtor como 'private', gera um atributo
        com o mesmo nome. */
-    constructor(private servico: FotoService, private roteador: Router, private rota: ActivatedRoute) {
+    constructor(
+        private servico: FotoService,
+        private roteador: Router,
+        private rota: ActivatedRoute,
+        private formBuilder: FormBuilder
+    ) {
         const id = rota.snapshot.params.idFoto;
         if(id) {
             servico.obter(id).subscribe(
@@ -21,6 +28,18 @@ export class CadastroComponent {
                 erro => console.log(erro)
             );
         }
+
+        this.formCadastro = formBuilder.group({
+            titulo: [
+                '',
+                Validators.compose([
+                    Validators.required,
+                    Validators.minLength(3)
+                    ])
+                ],
+            url: ['', Validators.required],
+            descricao: ''
+        });
     }
 
     salvar() {

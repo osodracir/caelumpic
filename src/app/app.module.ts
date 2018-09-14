@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -23,6 +23,7 @@ import { FotoService } from './servicos/foto.service';
     FormsModule,
     FotoModule, // Se não colocar aqui, NÃO VAI!
     PainelModule,
+    ReactiveFormsModule,
     ROTEAMENTO  // Importando os mapeamentos entre URLs e Componentes.
   ],
   // Aqui são colocados os serviços a serem injetados.
