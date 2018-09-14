@@ -4,6 +4,11 @@
     <h1 class="text-center">{{ title }}</h1>
   </header>
   <main class="container"> <!-- HTML5 -->
+    <div class="row" *ngIf="mensagem">
+      <div class="col-sm-12">
+        <p class="alert alert-success">{{mensagem}}</p>
+      </div>
+    </div>
     <div>
         <form class="input-group">
             <span class="input-group-prepend">
@@ -16,6 +21,7 @@
         <!-- Ao se passar um objeto como parâmetro, deve-se utilizar o Property
              Binding. Da outra forma, o objeto será transformado em uma String. -->
         <foto [foto]="foto"></foto>
+        <button (click)="remover(foto)" class="btn btn-danger btn-block">Remover</button>
       </painel>
     </div>
   </main>

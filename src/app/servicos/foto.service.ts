@@ -25,4 +25,8 @@ export class FotoService {
         /* Se for só post(), não vai. */
         return this.http.post(this.url, foto, this.cabecalhos);
     }
+
+    deletar(foto: Foto): Observable<Object> {
+        return this.http.delete(`${this.url}/${foto._id}`);
+    }
 }
