@@ -2,7 +2,12 @@
     <h1 class="text-center">Cadastro de Fotos</h1>
 </header>
 <main class="container">
-    <section class="row">
+    <div class="row" *ngIf="mensagem">
+        <div class="col-sm-12">
+          <p class="alert alert-success">{{mensagem}}</p>
+        </div>
+      </div>
+      <section class="row">
         <form class="col-sm-7" (ngSubmit)="salvar()">
             <div class="form-group">
                 <label>Título</label>

@@ -8,6 +8,7 @@ import { Foto } from '../foto/foto';
     templateUrl: './cadastro.component.html'
 })
 export class CadastroComponent {
+    mensagem: string = '';
     foto: Foto = new Foto();
 
     /* Declarando-se o parâmetro do construtor como 'private', gera um atributo
@@ -26,10 +27,16 @@ export class CadastroComponent {
         if(this.foto._id) {
             this.servico.alterar(this.foto).subscribe(
                 () => {
+                    this.mensagem = `Foto ${this.foto.titulo} alterada com sucesso.`;
                     console.log('Alteração de foto. ' + this.foto._id);
-                    this.foto = new Foto();
                     // Retorna para a página de listagem.
-                    this.roteador.navigate(['']);
+                    setTimeout(
+                        () => {
+                            this.mensagem = '';
+                            this.roteador.navigate(['']);
+                        },
+                        3000
+                    )
                 },
                 erro => console.log(erro)
             );
